@@ -1,0 +1,6 @@
+1 Request Cycle của laravel
+Client -> public/index.php -> load app -> http kernel -> bootstrap -> register service provider
+-> boot service provider -> middleware -> dispatch by router -> routes match -> controller -> response -> terminate middleware
+
+Cần gì thì hỏi AI đống trên
+

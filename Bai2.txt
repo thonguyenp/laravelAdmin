@@ -1,0 +1,25 @@
+php artisan make:controller UserController
+php artisan make:middleware AuthMiddleware
+php artisan make:request LoginRequest
+php artisan make:request LoginRequest
+
+Model: nơi đặt các class model, đại diện cho các bảng trong csdl
+
+Providers: nơi đăng ký các service providers (khởi tạo logic hoặc dịch vụ)
+
+bootstrap: dùng để khởi động ứng dụng, chứa file cache của laravel, chứa app.php đăng ký routing hoặc providers đăng ký providers
+
+config: chứa các cấu hình liên quan đến session, gửi mail, ...
+
+database: chứa các file liên quan đến dữ liệu:
++ migrations: thay đổi cấu trúc bảng
++ seeders:  thêm dữ liệu mẫu cho bảng
++ factories:  tạo dữ liệu mẫu để test
+
+có thể chạy php artisan migrate --seed để tạo bảng và thêm dữ liệu mẫu
+
+routes: Định nghĩa các đường dẫn trong ứng dụng
++ web.php: route cho giao diện web
++ api.php: route cho RESTful API
++ console.php: định nghĩa lệnh Artisan
++ channels.php: dùng cho Broadcast event qua websocket

@@ -1,0 +1,3 @@
+Blade là template engine (giống như Razor engine trong .net)
+Cho phép dùng PHP trong HTML
+Đuôi là: .blade.php

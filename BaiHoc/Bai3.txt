@@ -1,0 +1,5 @@
+Tạo route với tham số: /user/{id}
+
+Ưu điểm của đặt tên cho route là chỉ cần đặt tên 1 lần, nếu có thay đổi route thì cũng không sao
+
+dùng lệnh php artisan route:list để xem danh sách các route

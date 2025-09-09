@@ -1,0 +1,4 @@
+Tạo 1 form request riêng biệt, cú pháp:
+php artisan make:request tên+'Request'
+
+vd:php artisan make:request CreateUserRequest

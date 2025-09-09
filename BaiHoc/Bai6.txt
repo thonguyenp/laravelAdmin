@@ -1,0 +1,8 @@
+Controller là nơi xử lý logic giữa route và view
+(hoặc response Json). 
+Controller nằm giữa view và model, giúp tách biệt phân
+
+cú pháp: php artisan make:controller tênController
+
+Resource Controller là loại controller có sẵn 7 phương thức phổ biến khi thao tác CRUD
+cú pháp: php artisan make:controller tênController --resource

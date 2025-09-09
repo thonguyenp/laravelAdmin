@@ -1,0 +1,9 @@
+Quy trình của mô hình MVC:
+người dùng -> Request URL -> Controller (-> gọi model -> trả dữ liệu) -> View (<- dữ liệu trả về từ controller) -> trả kết quả ra trình duyệt
+
+Tạo controller bằng câu lệnh:
+php artisan make:controller tênController + 'Controller' 
+vd: php artisan make:controller UserController
+
+Tạo model bằng lệnh: php artisan make:model tênModel
+vd: php artisan make:model Post

@@ -1,0 +1,29 @@
+Middleware: là lớp trung gian giữa request của người dùng và ứng dụng Laravel
+
+Dùng để kiểm soát và xử lý request trước khi được gửi đến controller
+
+Ứng dụng:
+- Xác thực người dùng
+- Kiểm tra quyền truy cập
+- Ghi log request
+- Bảo vệ CSRF
+- Xử lý header, CORS, ...
+
+Cách hoạt động của Middleware:
+Người dùng -> middleware -> controller -> view -> người dùng
+
+Các middleware mặc định:
+- auth: xác thực đăng nhập
+- verified: xác thực email
+- throttle: giới hạn số lần truy cập
+- csrf: bảo vệ chống tấn công csrf
+
+Các bước tạo và đăng ký middleware
+b1: tạo middleware:
+- lệnh php artisan make:middleware tênMiddleware
+vd: php artisan make:middleware CheckAccessTime
+b2: xử lý logic trong hàm handle()
+b3: đăng ký middleware:
+- Dạng 1: đăng ký global middleware (apply cho mọi route mà đã đăng ký)
+- Dạng 2: đăng ký middleware alias (apply cho 1 route đã chọn)
+- Dạng 3: đăng ký middleware trong controller

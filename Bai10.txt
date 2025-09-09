@@ -1,0 +1,33 @@
+File .env chứa các cấu hình về database
+
+Lệnh php artisan migrate:status để kiểm tra tình trạng kết nối đến csdl của database
+
+Cách vừa tạo db, vừa chạy migrate:
+b1: đặt tên db trong .env
+b2: chạy lệnh php artisan migrate
+b3: chọn yes
+
+Migration là cách laravel quản lý db thông qua các file php
+
+File migration có tên: YYYY_MM_DD_ten_migration.php
+
+Có 2 phương thức là up() (để đưa các bảng/trường mới vào db) và down() (drop các bảng/trường trong db)
+
+lệnh tạo migration cho 1 cái gì đó:
+php artisan make:migration hànhĐộng_danhTừ_table
+vd: php artisan make:migration create_products_table
+
+Chạy lệnh php artisan migrate để chạy hết các file migration
+
+Muốn xóa bảng vừa tạo thì chạy lệnh: php artisan migrate:rollback
+
+Nếu làm dự án theo kiểu eloquent mvc thì dùng lệnh sau sẽ vừa có model, vừa có migration
+php artisan make:model tênModel -m
+vd: php artisan make:model Product -m
+
+Thêm 1 cột trong bảng
+cú pháp: php artisan make:migration add_tênCột_to_tênBảng_table
+vd: php artisan make:migration add_status_to_products_table
+
+Lệnh refresh (chạy lại tất cả migration từ đầu)
+php artisan migrate:refresh (không khuyến khích chạy vì mất hết record trong bảng)

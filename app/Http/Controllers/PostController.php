@@ -21,7 +21,16 @@ class PostController extends Controller
     }
     public function store(StorePostRequest $request)
     {
-        
+        DB::table('posts')->insert([
+            'title' => $request->get('title'),
+            'content' => $request->get('content'),
+            'created_at' => now(),
+            'updated_at' => now(),
+
+        ]);
+
+        return redirect()->route('posts.index')
+        ->with('message', 'Create post successfully!');
     }
 }
 

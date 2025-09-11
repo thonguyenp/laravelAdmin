@@ -10,3 +10,5 @@ Hiển thị posts
 Thêm posts
 Cập nhật title
 Xóa bài viết theo ID
+
+Phải có @csrf trong mọi form post trong laravel

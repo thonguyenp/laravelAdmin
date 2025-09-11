@@ -73,4 +73,5 @@ Route::prefix('posts')->controller(PostController::class)
     Route::post('/','store')->name('store');
     Route::get('/{id}', 'edit')->name('edit');
     Route::put('/{id}', 'update')->name('update');
+    Route::get('/{id}/destroy', 'destroy')->name('destroy');
 });

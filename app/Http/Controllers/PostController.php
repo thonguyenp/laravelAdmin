@@ -56,5 +56,13 @@ class PostController extends Controller
         return redirect()->route('posts.index')
         ->with('message', 'Edit post successfully!');
     }
+
+    public function destroy($id)
+    {
+        DB::table('posts')->where('id', $id)->delete();
+
+        return back()
+        ->with('message', 'Delete post successfully');
+    }
 }
 

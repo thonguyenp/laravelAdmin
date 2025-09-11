@@ -1,0 +1,11 @@
+Seeder và Factory dùng để tạo dữ liệu giả
+
+Cú pháp để tạo seeder:
+php artisan make:seeder UserSeeder
+
+Factory được dùng để tạo dữ liệu giả cho 1 model, dựa trên dữ liệu định sẵn
+
+Sử dụng faker để tạo dữ liệu như tên, email, điện thoại
+
+Cú pháp để tạo seeder:
+php artisan make:factory tênFactory

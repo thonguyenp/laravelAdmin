@@ -1,0 +1,12 @@
+Query Builder
+
+CRUD cơ bản
+
+tạo bảng post bằng php artisan make:migration create_posts_table
+
+Các chức năng:
+
+Hiển thị posts
+Thêm posts
+Cập nhật title
+Xóa bài viết theo ID

@@ -4,7 +4,11 @@
     <h1 class="mb-4">Danh sách bài viết</h1>
 
 <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">+ Thêm bài viết</a>
-
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
 <table class="table table-bordered">
   <thead>
     <tr>

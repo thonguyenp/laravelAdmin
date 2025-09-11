@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mb-4">Danh sách bài viết</h1>
 
-<a href="create.html" class="btn btn-primary mb-3">+ Thêm bài viết</a>
+<a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">+ Thêm bài viết</a>
 
 <table class="table table-bordered">
   <thead>

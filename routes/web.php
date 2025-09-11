@@ -67,7 +67,8 @@ Route::prefix('users')->controller(UserController::class)
 });
 
 Route::prefix('posts')->controller(PostController::class)
-    ->name('posts')->group(function(){
+    ->name('posts.')->group(function(){
     Route::get('/','index')->name('index');
     Route::get('/create', 'create')->name('create');
+    Route::post('/','store')->name('store');
 });

@@ -9,3 +9,11 @@ Sử dụng faker để tạo dữ liệu như tên, email, điện thoại
 
 Cú pháp để tạo seeder:
 php artisan make:factory tênFactory
+
+Cú pháp để chạy seeder:
+php artisan db:seed (apply mặc định cho DatabaseSeeder)
+Chạy riêng biệt cho từng seeder
+php artisan db:seed --class=tênSeeder
+
+Lệnh để xóa hết record trong bảng và thêm bằng seed mới
+php artisan migrate:fresh --seed (chỉ nên áp dụng môi trường dev hoặc test)

@@ -32,5 +32,29 @@ class PostController extends Controller
         return redirect()->route('posts.index')
         ->with('message', 'Create post successfully!');
     }
+
+    public function edit($id)
+    {
+        $posts = DB::table('posts')->where('id', $id)->first();
+        if (!$posts)
+        {
+            abort(404);
+        }
+
+        return view('posts.edit', compact('posts'));
+    }
+
+    public function update(StorePostRequest $request, $id)
+    {   
+        DB::table('posts')->where('id', $id)->update([
+            'title' =>$request->get('title'),
+            'content' => $request->get('content'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return redirect()->route('posts.index')
+        ->with('message', 'Edit post successfully!');
+    }
 }
 

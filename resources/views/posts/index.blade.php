@@ -22,7 +22,7 @@
             <td>{{$p->title}}</td>
             <td>{{$p->created_at}}</td>
             <td>
-                <a href="edit.html?id=1" class="btn btn-warning">Sửa</a>
+                <a href="{{route('posts.edit',  ['id' => $p->id])}}" class="btn btn-warning">Sửa</a>
                 <a href="delete.html?id=1" class="btn btn-danger">Xóa</a>
             </td>
         </tr>

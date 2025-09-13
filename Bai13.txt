@@ -1,0 +1,7 @@
+Eloquent là 1 dạng Object-Relational Mappipng (ORM) măc định của Laravel
+
+(vd là model Category)
+
+b1: php artisan make:model Category -m (vừa tọa class vừa tạo model)
+
+b2: tạo thêm các trường name và des rồi thì chạy php artisan migrate

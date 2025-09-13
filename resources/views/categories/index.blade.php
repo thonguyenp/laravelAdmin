@@ -4,6 +4,8 @@
     <h1 class="mb-4">Danh sách danh mục</h1>
 
 <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">+ Thêm danh mục</a>
+<a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">+ Xóa tất cả</a>
+
 @if (session('message'))
     <div class="alert alert-success">
         {{ session('message') }}

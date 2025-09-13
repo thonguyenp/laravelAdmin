@@ -30,4 +30,36 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
         -> with('message', 'Create  Category successfully');
     }
+
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('categories.edit',compact('category'));
+    }
+
+    public function update($id, StoreCategoryRequest $request)
+    {
+        $category = Category::findOrFail($id);
+        $category->update([
+            'name' => $request->get('name'),
+            'description' => $request->get('description')
+        ]);
+
+        return redirect()->route('categories.index')
+        ->with('message', 'Create categories successfully');
+    }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return back()->with('message', 'Delete categories successfully');
+    }
+
+    public function destroyAll()
+    {
+        Category::query()->delete();
+        return back()->with('message', 'Delete all categories successfully');
+    }
 }

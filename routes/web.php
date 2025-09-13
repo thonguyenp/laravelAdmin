@@ -83,8 +83,8 @@ Route::prefix('categories')->controller(CategoryController::class)
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
     Route::post('/', 'store')->name('store');
+    Route::get('/destroyAll','destroyAll')->name('destroyAll');
     Route::get('/{id}', 'edit')->name('edit');
     Route::put('/{id}', 'update')->name('update');
     Route::get('/{id}/destroy', 'destroy')->name('destroy');
-
 });

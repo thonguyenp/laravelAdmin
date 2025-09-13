@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -74,4 +75,16 @@ Route::prefix('posts')->controller(PostController::class)
     Route::get('/{id}', 'edit')->name('edit');
     Route::put('/{id}', 'update')->name('update');
     Route::get('/{id}/destroy', 'destroy')->name('destroy');
+});
+
+Route::prefix('categories')->controller(CategoryController::class)
+    ->name('categories.')
+    ->group(function (){
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::get('/{id}', 'edit')->name('edit');
+    Route::put('/{id}', 'update')->name('update');
+    Route::get('/{id}/destroy', 'destroy')->name('destroy');
+
 });

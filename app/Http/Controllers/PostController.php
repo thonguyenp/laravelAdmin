@@ -36,7 +36,7 @@ class PostController extends Controller
             'content' => $request->get('content'),
             'created_at' => now(),
             'updated_at' => now(),
-
+            'thumbnail' => $path,
         ]);
 
         return redirect()->route('posts.index')

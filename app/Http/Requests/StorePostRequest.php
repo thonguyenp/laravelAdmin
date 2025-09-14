@@ -21,9 +21,26 @@ class StorePostRequest extends FormRequest
      */
     public function rules(): array
     {
+        // dd([
+        //     'has_file' => $this->hasFile('thumbnail'),
+        //     'mime' => $this->hasFile('thumbnail') ? $this->file('thumbnail')->getMimeType() : null,
+        //     'extension' => $this->hasFile('thumbnail') ? $this->file('thumbnail')->getClientOriginalExtension() : null,
+        //     'valid' => $this->hasFile('thumbnail') ? $this->file('thumbnail')->isValid() : false,
+        // ]);        
         return [
             'title' => 'required|string',
-            'content' => 'required|string'
+            'content' => 'required|string',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
     }
+
+    // public function messages(): array
+    // {
+    //     return [
+    //         'thumbnail.required' => 'Vui lòng chọn ảnh, đồ ngu!',
+    //         'thumbnail.image' => 'File phải là ảnh, không phải rác!',
+    //         'thumbnail.mimes' => 'Chỉ hỗ trợ jpeg, png, jpg, gif, svg, webp, kiểm tra lại đi con cặc!',
+    //         'thumbnail.max' => 'Ảnh quá lớn, tối đa 2MB thôi!',
+    //     ];
+    // }
 }

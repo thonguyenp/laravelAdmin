@@ -1,1 +1,13 @@
 Học về Upload File
+
+dùng thẻ <input type="file" name="thumbnail" accept="image/*" id=""> với image/* là cho phép toàn bộ định dạng ảnh
+
+dùng enctype="multipart/form-data"
+
+Vào lớp Request (Validation) của func store()
+thêm: 'name của thẻ input (ở đây là thumbnail)' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048 (kb) (~2mb)'
+
+**Thêm dòng upload_tmp_dir = c:\windows\temp** trong php.ini
+
+Tạo migration bằng dòng lệnh:
+php artisan make:migration add_thumbnail_to_posts_table

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -21,6 +22,15 @@ class PostController extends Controller
     }
     public function store(StorePostRequest $request)
     {
+        
+        // Xử lý lưu file ảnh
+        if ($request->hasFile('thumbnail'))
+        {
+            $file  = $request->file('thumbnail');
+            $fileName = time() . '-' . $file->getClientOriginalName();
+            $path = $file->storeAs('images', $fileName);        
+        }
+
         DB::table('posts')->insert([
             'title' => $request->get('title'),
             'content' => $request->get('content'),

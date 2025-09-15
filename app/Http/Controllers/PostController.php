@@ -86,7 +86,11 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        DB::table('posts')->where('id', $id)->delete();
+        $post = Post::findOrFail($id);
+        
+       $post->delete();
+
+       Storage::delete($post->thumbnail);
 
         return back()
         ->with('message', 'Delete post successfully');

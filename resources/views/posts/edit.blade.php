@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="mb-4">Sửa bài viết</h1>
 
-<form method="POST" action="{{route('posts.update', ['id' =>$posts->id])}}">
+<form method="POST" action="{{route('posts.update', ['id' =>$posts->id])}}" enctype="multipart/form-data">
   @csrf
   <input type="hidden" name="_method" value="PUT">
   <div class="mb-3">

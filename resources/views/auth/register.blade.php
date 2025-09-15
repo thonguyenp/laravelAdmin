@@ -2,18 +2,23 @@
 
 @section('content')
     <h1>Register</h1>
-    <form method="POST" action="#" novalidate>
+    <form method="POST" action="{{route('postRegister')}}" novalidate>
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{session('message')}}
+            </div>
+        @endif
         @csrf
         <div class="mb-3">
             <label>Tên</label>
-            <input type="text" name="name" class="form-control" required>
+            <input type="text" value="{{old('name')}}" name="name" class="form-control" required>
             @error('name')
                 <div class="text-danger">{{$message}}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" required>
+            <input type="email" value="{{old('email')}}" name="email" class="form-control" required>
             @error('email')
                 <div class="text-danger">{{$message}}</div>
             @enderror

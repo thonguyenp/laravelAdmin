@@ -13,6 +13,7 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>Thumbnail</th>
       <th>Tiêu đề</th>
       <th>Ngày tạo</th>
       <th>Hành động</th>

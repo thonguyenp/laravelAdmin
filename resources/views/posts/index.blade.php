@@ -24,6 +24,9 @@
     @forelse ($posts as $p)
         <tr>
             <td>{{$p->id}}</td>
+            <td>
+                <img width="150" src="{{asset('storage/' . $p->thumbnail)}}" alt="{{$p->title}}">
+            </td>
             <td>{{$p->title}}</td>
             <td>{{$p->created_at}}</td>
             <td>

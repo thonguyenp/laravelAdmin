@@ -4,9 +4,21 @@
 <h1 class="mb-4">Sửa bài viết</h1>
 
 <form method="POST" action="{{route('posts.update', ['id' =>$posts->id])}}">
-    @csrf
+  @csrf
   <input type="hidden" name="_method" value="PUT">
-  
+  <div class="mb-3">
+    <img width="250" src="{{asset('storage/' . $posts->thumbnail)}}" alt="{{$posts->title}}">
+  </div>
+  <div class="mb-3">
+    <label>Thumbnail</label> <br>
+    {{-- accept="image/*" để chỉ cho phép chọn file ảnh --}}
+    <input type="file" name="thumbnail" accept="image/*" id="">
+    @error('thumbnail')
+    <div class="text-danger">{{$message}}</div>
+    @enderror
+
+  </div>
+
   <div class="mb-3">
     <label class="form-label">Tiêu đề</label>
     <input type="text" name="title" value="{{$posts->title}}" class="form-control">
@@ -20,5 +32,5 @@
   <button type="submit" class="btn btn-primary">Cập nhật</button>
   <a href="{{route('posts.index')}}" class="btn btn-secondary">Hủy</a>
 </form>
-    
+
 @endsection

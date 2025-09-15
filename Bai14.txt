@@ -11,3 +11,7 @@ thêm: 'name của thẻ input (ở đây là thumbnail)' => 'required|image|mim
 
 Tạo migration bằng dòng lệnh:
 php artisan make:migration add_thumbnail_to_posts_table
+
+Để hiển thị ảnh thì ảnh cần nằm trong thư mục public => tạo symlink bằng câu lệnh: php artisan storage:link từ storage/app/private => /public
+
+trong .env sửa FILESYSTEM_DISK từ local => thành public

@@ -1,1 +1,6 @@
 Authentication
+
+Vì không phải ai cũng được xem thông tin riêng tư của người khác => định danh người truy cập, từ đó kiểm soát quyền truy cập
+
+b1. Tạo AuthController
+php artisan make:controller AuthController

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -88,3 +89,5 @@ Route::prefix('categories')->controller(CategoryController::class)
     Route::put('/{id}', 'update')->name('update');
     Route::get('/{id}/destroy', 'destroy')->name('destroy');
 });
+
+Route::get('register', [AuthController::class, 'register'])->name('register');

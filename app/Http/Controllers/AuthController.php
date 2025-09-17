@@ -26,4 +26,9 @@ class AuthController extends Controller
 
         return back()->with('message', 'Register successfully');
     }
+
+    public function login ()
+    {
+        return view('auth.login');
+    }
 }

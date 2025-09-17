@@ -69,7 +69,8 @@ Route::prefix('users')->controller(UserController::class)
     Route::post('/store', 'store')->name('store');
 });
 
-Route::prefix('posts')->controller(PostController::class)
+//Dùng middleware auth để chặn request từ những user chưa đăng nhập
+Route::middleware('auth')->prefix('posts')->controller(PostController::class)
     ->name('posts.')->group(function(){
     Route::get('/','index')->name('index');
     Route::get('/create', 'create')->name('create');

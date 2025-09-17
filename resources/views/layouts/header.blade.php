@@ -5,8 +5,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       @auth
-        
-        <a href="{{route('logout')}}" class="text-white">Logout</a> 
+        <div>
+          <span class="text-white">{{auth()->user()->name}}</span>
+          <a href="{{route('logout')}}" class="text-white">Logout</a> 
+        </div>
       @endauth
     </div>
   </nav>

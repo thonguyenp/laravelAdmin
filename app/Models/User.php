@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role', //mỗi lần thêm cột thì phải thêm thuộc tính vào fillable
     ];
 
     /**

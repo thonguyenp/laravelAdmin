@@ -1,0 +1,4 @@
+Authentication: Người dùng là ai
+Authorization: Người dùng có quyền làm gì
+
+b1: đăng kí route admin

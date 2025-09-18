@@ -16,7 +16,7 @@ class EnsureUserIsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->role == 'admin')
+        if (Auth::check() && Auth::user()->isAdmin())
         {
             //nếu đã đăng nhập và role là admin thì cho qua
             return $next($request);

@@ -1,4 +1,11 @@
 Authentication: Người dùng là ai
 Authorization: Người dùng có quyền làm gì
 
-b1: đăng kí route admin
+b1: đăng kí route admin (tạo route/admin.php)
+b2: đăng kí trong bootstraps/app.php
+b3: tạo route dashboard trong admin
+b4: tạo admincontroller: php artisan make:controller AdminController
+
+
+Tạo thêm cột role cho bảng users
+php artisan make:migration add_role_to_users_table

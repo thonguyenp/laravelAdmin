@@ -1,0 +1,17 @@
+Tạo 1 lớp Mail tên là WelcomeMail
+php artisan make:mail WelcomeMail
+
+Nếu có lỗi ssl thì thêm đoạn code này vào configs/mail.php
+
+'verify_peer' => false
+'verify_peer_name' => false
+
+Config gmail trong .env:
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=youremail@gmail.com
+MAIL_PASSWORD=yourpassword (app password)
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=youremail@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"

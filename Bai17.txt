@@ -15,3 +15,9 @@ MAIL_PASSWORD=yourpassword (app password)
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=youremail@gmail.com
 MAIL_FROM_NAME="${APP_NAME}"
+
+Để gửi mail nhanh hơn thì dùng queue (bất đồng bộ)
+
+Vào cmder gõ php artisan queue:work để chạy queue
+
+luôn dùng try-catch khi gửi mail
